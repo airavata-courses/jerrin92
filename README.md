@@ -8,6 +8,7 @@ System Requirements
   * MySQL 14.14
   * Angular 2.4
   * npm 5.3.0
+  * Express 4.15.0
   
 Python required pacakges
   * MySQLdb
