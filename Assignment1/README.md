@@ -16,14 +16,7 @@ Python required pacakges
  
 
 Building and Running the system
-  * Start the MySQL service
-  * Edit the getLoad.py & getInterrupts.py and enter the login credentials and ensure that test database exists in MySQL
-  * Run both the python scripts
-  * In the userInterface directory run command 'npm install' followed by 'ng serve'
-  * Edit the database credentials in app.js in both nodemon & nodemon2 directories
-  * In the nodemon & nodemon2 directories run 'npm install' followed by 'node app.js'
-  * Open a webbrowser and visit http://localhost:4200
-
+  Check the wiki page for the info
 
 
 
