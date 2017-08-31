@@ -1,0 +1,14 @@
+<div>
+        <h3>Number of System Interrupts</h3><br>
+<!--<ul>
+
+                <li *ngFor="let d of data">
+                        {{ d.cluster }}:   {{ d.jobs }}
+                </li>
+
+</ul>-->
+   <div class="chart">
+      <chart [options]="interrupt_chart" (load)="saveInstance($event.context)"></chart>
+    </div>
+
+</div>
