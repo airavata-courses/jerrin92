@@ -18,9 +18,9 @@ Python required pacakges
 Building and Running the system
   * Start the MySQL service
   * Edit the getLoad.py and enter the login credentials and ensure that test database exists in MySQL
+  * Run python getLoad.py
   * In the userInterface directory run command 'npm install' followed by 'ng serve'
   * In the nodemon directory run 'npm install' followed by 'node app.js'
-  * Run python getLoad.py
   * Open a webbrowser and visit http://localhost:4200
 
 
