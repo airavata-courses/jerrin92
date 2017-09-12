@@ -1,10 +1,10 @@
 from flask import Flask
-from flask_cors import CORS
+from flask_cors import CORS,cross_origin
 from time import sleep
-
 import pika
 
 app = Flask(__name__)
+CORS(app)
 
 def callback(ch, method, properties, body):
     #time = body
@@ -29,6 +29,7 @@ def receiveTime():
 	
 
 @app.route("/")
+@cross_origin()
 def main():
     time = receiveTime()
     return time
