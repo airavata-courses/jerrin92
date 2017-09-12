@@ -1,0 +1,39 @@
+import { Component, OnInit } from '@angular/core';
+import { Response } from '@angular/http';
+import { Chart, ChartObject } from 'highcharts';
+import { InterruptService} from './interrupt.service';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/Rx';
+import { IntervalObservable } from 'rxjs/observable/IntervalObservable';
+import polling from 'rx-polling';
+
+@Component({
+  selector: 'app-interrupt',
+  templateUrl: './interrupt.component.html',
+  styleUrls: ['./interrupt.component.css']
+})
+export class InterruptComponent implements OnInit {
+
+data;
+
+
+interrupt_chart: Object;
+charts: Map<string, ChartObject> = new Map<string, ChartObject>();
+
+  constructor(service: InterruptService) { 
+	service.getData()
+	.subscribe(
+	(response: Response) => {
+		this.data = response.json();
+		console.log(this.data);
+		console.log('test');
+	},
+	(error) => console.log(error)
+	);
+	
+}
+
+  ngOnInit() {
+  }
+
+}

@@ -4,7 +4,7 @@ import time
 import psutil
 
 def connectDB():
-    db = MySQLdb.connect(host="localhost",user="root",passwd="root",db="test",port=3016)
+    db = MySQLdb.connect(host="localhost",user="root",passwd="root",db="test",port=3306)
     if(db):
         curs = db.cursor()
         return curs,db

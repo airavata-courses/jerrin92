@@ -4,7 +4,8 @@ var express    = require("express");
    host     : 'localhost',
    user     : 'root',
    password : 'root',
-   database : 'test'
+   database : 'test',
+   port: 3016
  });
  var app = express();
 
