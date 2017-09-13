@@ -11,7 +11,7 @@ export class LoadService {
 
   getData(){
  
-		//return this.http.get('http://localhost:3000/result');
-		return this.http.get('http://localhost:3000');
+		return this.http.get('http://localhost:5000/load');
+		//return this.http.get('http://localhost:3000');
 	}
 }

@@ -12,8 +12,8 @@ export class InterruptService {
 
   getData(){
  
-                //return this.http.get('http://localhost:3000/result');
-                return this.http.get('http://localhost:3001');
+                return this.http.get('http://localhost:5000/interrupt');
+                //return this.http.get('http://localhost:3001');
         }
 
 }

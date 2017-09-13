@@ -8,7 +8,7 @@ CORS(app)
 
 def callback(ch, method, properties, body):
     #time = body
-    print(" [x] Received %r" % body)
+    print(" [x] Received %r" % bo dy)
 
 
 def receiveTime():
