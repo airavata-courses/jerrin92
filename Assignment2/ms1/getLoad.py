@@ -30,6 +30,7 @@ def insertToDB():
 
 
 if __name__ == '__main__':
+	#blah
 	while True:
 		insertToDB()
 		time.sleep(50)
