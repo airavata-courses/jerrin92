@@ -23,12 +23,12 @@ RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 #VOLUME ["/nodemon"]
 
 ADD run.sh /
-ADD getLoad.py /
-ADD nodemon /nodemon
+ADD getInterrupts.py /
+ADD nodemon2 /nodemon2
 
-RUN cd /nodemon && npm install
+RUN cd /nodemon2 && npm install
 
-EXPOSE 3000
+EXPOSE 3001
 
 
 #CMD ["/bin/bash"]
