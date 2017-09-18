@@ -15,14 +15,10 @@ node {
     }
 
 
-    stage('Push image') {
+    stage('Deploy') {
         /* Finally, we'll push the image with two tags:
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("ms1")
-app.pull()
-app.run('-p 3000:3000')
-    }    }
+            docker.image(bitb3ast/science-gateway:ms1).run('-p 3000:3000')
+}}
