@@ -25,7 +25,10 @@ node {
             app.push("ms1")
     }    }
 stage('Deploy'){
-docker.pull('bitb3ast/science-gateway:ms1')
-        def c = docker.image('bitb3ast/science-gateway:ms1').run('-p 3000:3000')
-    }
-    }
+docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+app.pull('bitb3ast/science-gateway:ms1')
+}}
+stage('Run'){
+docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
+        app.image('bitb3ast/science-gateway:ms1').run('-p 3000:3000')
+    }}}
