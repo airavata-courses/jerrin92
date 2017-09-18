@@ -40,6 +40,7 @@ def index():
 @app.route('/load')
 def load():
 	#Read from RabbitMQ load queue
+	#checking jenkins
 	__sendDataRequest('load-request')
 	data = __getDataFromRabbitMQ('load')
 
