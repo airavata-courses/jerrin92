@@ -14,6 +14,9 @@ RUN apt-get install -y python-pip python-dev build-essential
 RUN pip install --upgrade pip 
 RUN pip install psutil
 RUN pip install MySQL-python
+RUN pip install flask
+RUN pip install flask_cors
+RUN pip install pika
 
 # TODO could uninstall some build dependencies
 
@@ -23,12 +26,11 @@ RUN update-alternatives --install /usr/bin/node node /usr/bin/nodejs 10
 #VOLUME ["/nodemon"]
 
 ADD run.sh /
-ADD getInterrupts.py /
-ADD nodemon2 /nodemon2
+ADD gatway.py /
 
-RUN cd /nodemon2 && npm install
 
-EXPOSE 3001
+
+EXPOSE 5000
 
 
 #CMD ["/bin/bash"]
