@@ -11,18 +11,11 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("bitb3ast/science-gateway:ms1")
+        app = docker.build("jerrin/ms2")
+    }
+    stage('Deploy'){
+        def c = docker.image('jerrin/ms2').run('-it --name msone -p 3001:3001 --link some-rabbit:rabbithost --link mysql-cont:mysqlhost')
     }
 
 
-    stage('Push image') {
-        /* Finally, we'll push the image with two tags:
-         * First, the incremental build number from Jenkins
-         * Second, the 'latest' tag.
-         * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-            app.push("${env.BUILD_NUMBER}")
-            app.push("ms1")
-        }
-    }
 }
