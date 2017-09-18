@@ -14,7 +14,7 @@ node {
         app = docker.build("jerrin/ms1")
     }
     stage('Deploy'){
-        def c = docker.image('jerrin/ms1').run('-p 3000:3000')
+        def c = docker.image('jerrin/ms1').run('-it --name msone -p 3000:3000 --link some-rabbit:rabbithost --link mysql-cont:mysqlhost')
     }
 
 
