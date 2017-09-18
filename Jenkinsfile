@@ -23,12 +23,6 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
             app.push("${env.BUILD_NUMBER}")
             app.push("ms1")
+app.pull()
+app.run('-p 3000:3000')
     }    }
-stage('Deploy'){
-docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-app.pull('bitb3ast/science-gateway:ms1')
-}}
-stage('Run'){
-docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials') {
-        app.image('bitb3ast/science-gateway:ms1').run('-p 3000:3000')
-    }}}
