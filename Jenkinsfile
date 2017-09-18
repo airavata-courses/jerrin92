@@ -11,14 +11,11 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("bitb3ast/science-gateway:ms1")
+        app = docker.build("jerrin/ms1")
+    }
+    stage('Deploy'){
+        def c = docker.image('jerrin/ms1').run('-p 3000:3000')
     }
 
 
-    stage('Deploy') {
-        /* Finally, we'll push the image with two tags:
-         * First, the incremental build number from Jenkins
-         * Second, the 'latest' tag.
-         * Pushing multiple tags is cheap, as all the layers are reused. */
-            docker.image(bitb3ast/science-gateway:ms1).run('-p 3000:3000')
-}}
+}
