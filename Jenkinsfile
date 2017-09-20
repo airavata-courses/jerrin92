@@ -10,7 +10,7 @@ node {
     stage('Build image') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
-
+        sh '''sudo docker stop msone || true && sudo docker rm msone'''
         app = docker.build("jerrin/ms1")
     }
     stage('Deploy'){
