@@ -11,7 +11,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
         sh '''if [ "$(docker ps -q -f name=mstwo)" ]; then 
-                sudo docker stop mstwo || true && sudo docker rm mstwo;fi'''
+                    sudo docker stop mstwo || true && sudo docker rm mstwo; fi'''
         app = docker.build("jerrin/ms2")
     }
     stage('Deploy'){
